@@ -1,158 +1,141 @@
 <!DOCTYPE html>
-<html lang="ta">
+<html lang="en-US">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BG CAPTAIN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG CAPTAIN ✿︎</title>
+    <meta name="description" content="Join BG CAPTAIN ✿︎ - Premium Learning Community">
+    <link rel="canonical" href="">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=El+Messiri:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-  background: radial-gradient(circle at top, #3b0a57, #120016);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:#fff;
+font-family:'El Messiri',sans-serif;
+background:linear-gradient(135deg,#0a001a,#1a0033,#0a001a);
+color:#fff;min-height:100vh;overflow-x:hidden
 }
-
-.wrapper{
-  max-width:420px;
-  width:100%;
-  padding:20px;
+body::before{
+content:'';position:fixed;inset:0;
+background:
+radial-gradient(circle at 20% 80%,rgba(255,255,255,.06),transparent 40%),
+radial-gradient(circle at 80% 20%,rgba(255,255,255,.03),transparent 40%);
+z-index:-1
 }
-
-.header{
-  text-align:center;
-  margin-bottom:16px;
+.sparks{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.spark{
+position:absolute;width:4px;height:4px;
+background:linear-gradient(to top,#fff,#ff9500);
+border-radius:50%;animation:rise 4s linear infinite;opacity:.6
 }
-
-.header h1{
-  font-size:1.9rem;
-  letter-spacing:1px;
-  font-weight:800;
+.spark:nth-child(n){left:calc(10% * var(--i))}
+@keyframes rise{
+0%{bottom:-10px;opacity:0}
+10%{opacity:1}
+90%{opacity:1}
+100%{bottom:100vh;opacity:0;transform:rotate(360deg)}
 }
-
-.logo{
-  background:#1a001f;
-  border-radius:50%;
-  width:140px;
-  height:140px;
-  margin:18px auto;
-  padding:6px;
+.container{max-width:900px;margin:auto;padding:28px 22px;text-align:center}
+.title{
+font-family:'Josefin Sans',sans-serif;
+font-size:4rem;letter-spacing:6px;
+text-shadow:0 0 20px rgba(255,255,255,.45)
 }
-
-.logo img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
+.logo-wrap{
+width:300px;height:300px;margin:26px auto;
+border-radius:50%;padding:6px;
+background:linear-gradient(135deg,rgba(255,149,0,.06),rgba(255,102,0,.06));
+border:3px solid rgba(255,149,0,.12)
 }
-
-.card{
-  background:linear-gradient(180deg,#2b0036,#14001a);
-  border-radius:26px;
-  padding:22px;
-  box-shadow:0 20px 40px rgba(0,0,0,.6);
-  border:3px solid #ff7a18;
+.logo-img{
+width:100%;height:100%;border-radius:50%;
+object-fit:cover;border:4px solid rgba(255,255,255,.06)
 }
-
-.join-btn{
-  display:block;
-  margin:18px auto;
-  padding:16px;
-  border-radius:50px;
-  text-align:center;
-  text-decoration:none;
-  font-weight:700;
-  font-size:1.05rem;
-  color:#000;
-  background:linear-gradient(90deg,#ff512f,#f09819);
-  transition:transform .25s ease, box-shadow .25s ease;
+.description{
+font-family:'Noto Sans Tamil',sans-serif;
+font-size:1rem;font-weight:700;
+max-width:720px;margin:26px auto;
+background:rgba(0,0,0,.1);padding:12px;border-radius:8px
 }
-
-.join-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(255,150,50,.4);
+.btn{
+display:inline-flex;align-items:center;justify-content:center;
+padding:14px 42px;margin:10px;
+border-radius:50px;font-weight:700;
+transition:.3s;min-width:240px;text-decoration:none
 }
-
-.content{
-  margin-top:18px;
-  line-height:1.7;
-  font-size:.95rem;
-  opacity:.95;
+.btn-primary{
+background:linear-gradient(45deg,#ff9500,#ff6600);
+color:#fff;box-shadow:0 8px 25px rgba(255,102,0,.3)
 }
-
-.content p{
-  margin-bottom:12px;
+.btn-secondary{
+border:2px solid #ff9500;color:#ff9500
 }
-
-.footer{
-  text-align:center;
-  margin-top:14px;
-  font-size:.85rem;
-  opacity:.75;
+.btn:hover{transform:translateY(-3px)}
+.timer{margin-top:18px;color:#ff9500}
+.footer{margin-top:42px;font-size:.9rem;color:rgba(255,255,255,.6)}
+@media(max-width:768px){
+.title{font-size:2.5rem}
+.logo-wrap{width:220px;height:220px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="sparks">
+  <div class="spark" style="--i:1"></div>
+  <div class="spark" style="--i:2"></div>
+  <div class="spark" style="--i:3"></div>
+  <div class="spark" style="--i:4"></div>
+  <div class="spark" style="--i:5"></div>
+</div>
 
-  <div class="header">
-    <h1>BG CAPTAIN ✿︎</h1>
-  </div>
+<div class="container">
+    <h1 class="title">BG CAPTAIN ✿︎</h1>
 
-  <div class="logo">
-    <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/696a10a92e16e_6291639601721970038.jpg" alt="BG CAPTAIN">
-  </div>
+    <span class="logo-wrap">
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/696a10a92e16e_6291639601721970038.jpg" class="logo-img" alt="BG CAPTAIN Logo">
+    </span>
 
-  <div class="card">
-
-    <a class="join-btn" href="https://t.me/+fu-ek_RaeLM2M2Y1" target="_blank">
-      JOIN BG CAPTAIN
+    <a href="https://t.me/YOUR_TELEGRAM_LINK" class="btn btn-primary" target="_blank">
+        <i class="fab fa-telegram"></i>&nbsp; JOIN BG CAPTAIN &nbsp;<i class="fab fa-telegram"></i>
     </a>
 
-    <div class="content">
-      <p>
-        நண்பர்களே, ஏன் உங்கள் பணத்தையும் நேரத்தையும் வீணடிக்கிறீர்கள்?
-        எளிய முறையில் புரிந்துகொள்ளக்கூடிய விளக்கங்களுடன்
-        நமது சேனலில் பகிரப்படுகிறது.
-      </p>
+    <p class="description">
+        Many beginners fail because they don’t understand basics.<br>
+        BG CAPTAIN focuses on simple concepts, pattern understanding & disciplined thinking.<br>
+        No pressure • No confusion • Perfect for beginners starting from zero.
+    </p>
 
-      <p>
-        புதியவர்களுக்கும் அனுபவம் உள்ளவர்களுக்கும்
-        ஒழுங்கான வழிகாட்டுதல் வழங்கப்படுகிறது.
-        குழப்பம் இல்லை. அழுத்தம் இல்லை.
-      </p>
+    <p class="timer">
+        Redirecting to Telegram in <span id="count">5</span> seconds
+    </p>
 
-      <p>
-        நீங்கள் முன்பு சந்தித்த இழப்புகளை புரிந்துகொள்ளவும்,
-        இனிமேல் தெளிவான முடிவுகளை எடுக்கவும்
-        இந்த community உதவும்.
-      </p>
+    <a href="https://t.me/YOUR_TELEGRAM_LINK" class="btn btn-secondary" target="_blank">
+        START LEARNING NOW
+    </a>
 
-      <p>
-        இனிமேலும் நேரத்தை வீணாக்காமல்
-        நமது <b>TASHAN WIN</b> community-யில்
-        இன்றே சேருங்கள்.
-      </p>
+    <div class="footer">
+        Powered by BG CAPTAIN ✿︎ | Beginner Friendly Community
     </div>
-
-  </div>
-
-  <div class="footer">
-    Educational purpose only · No guarantees
-  </div>
-
 </div>
+
+<script>
+let t=5;
+const c=document.getElementById('count');
+const link="https://t.me/YOUR_TELEGRAM_LINK";
+const i=setInterval(()=>{
+t--;c.innerText=t;
+if(t<=0){clearInterval(i);window.location.href=link;}
+},1000);
+</script>
 
 </body>
 </html>
